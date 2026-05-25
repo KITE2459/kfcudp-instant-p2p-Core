@@ -21,11 +21,11 @@ const sendQueueSize = 16384
 // coalesceBatchMax - 한 번의 DataChannel.Send() 에 합칠 최대 청크 수.
 // 청크당 최대 65536 바이트이므로 최악의 경우 coalesceBatchMax * 65536 바이트가
 // 하나의 Send() 호출로 묶임. SCTP 메시지 크기 제한(256KB~1MB)을 고려해 4로 설정.
-const coalesceBatchMax = 4
+const coalesceBatchMax = 16
 
 // coalesceMaxBytes - 합치기 상한선 (bytes).
 // 256KB를 넘으면 SCTP 내부에서 단편화가 발생하므로 그 이하로 유지.
-const coalesceMaxBytes = 256 * 1024
+const coalesceMaxBytes = 1024 * 1024
 
 // tcpReadBuf - TCP 읽기용 고정 버퍼
 type tcpReadBuf struct {

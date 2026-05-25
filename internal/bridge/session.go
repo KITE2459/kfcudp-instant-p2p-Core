@@ -106,12 +106,12 @@ func NewSession(api *webrtc.API, cfg webrtc.Configuration, role Role, sessionID 
 
 const (
 	// dcBufferLow - 이 이하로 내려가면 Send 재개
-	dcBufferLow = 512 * 1024 // 512KB
+	dcBufferLow = 2 * 1024 * 1024 // 2MB
 
 	// dcBufferHigh - 이 이상이면 Send 대기.
 	// TCP의 소켓 버퍼와 동일한 역할 — 차면 블로킹, 빠지면 재개.
 	// 타임아웃 없음: TCP도 버퍼가 차면 Write가 블로킹될 뿐 연결을 끊지 않음.
-	dcBufferHigh = 4 * 1024 * 1024 // 4MB
+	dcBufferHigh = 16 * 1024 * 1024 // 16MB
 )
 
 // recvBuf - 수신 버퍼 하나

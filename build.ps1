@@ -2,9 +2,8 @@ $ErrorActionPreference = "Stop"
 
 $targets = @(
     @{ GOOS = "linux";   GOARCH = "amd64";  OUT = "openfriend-linux-amd64";            CMD = "./cmd/openfriend" },
-    @{ GOOS = "linux";   GOARCH = "amd64";  OUT = "openfriend-quic-linux-amd64";       CMD = "./cmd/openfriend-quic" },
-    @{ GOOS = "windows"; GOARCH = "amd64";  OUT = "openfriend-windows-amd64.exe";      CMD = "./cmd/openfriend" },
-    @{ GOOS = "windows"; GOARCH = "amd64";  OUT = "openfriend-quic-windows-amd64.exe"; CMD = "./cmd/openfriend-quic" }
+    @{ GOOS = "linux";   GOARCH = "arm64";  OUT = "openfriend-linux-arm64";            CMD = "./cmd/openfriend" },
+    @{ GOOS = "windows"; GOARCH = "amd64";  OUT = "openfriend-windows-amd64.exe";      CMD = "./cmd/openfriend" }
 )
 
 # 이전 빌드 파일 삭제 (UPX AlreadyPackedException 방지)
